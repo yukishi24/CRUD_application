@@ -20,3 +20,11 @@ spring:
 # =============================================================
 # mybatis 設定
 # =============================================================
+---
+mybatis:
+  mapper-locations:
+  - classpath*:/mapper/mysql/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.example.demo.domain.user.model
+    

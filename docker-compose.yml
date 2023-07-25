@@ -20,7 +20,7 @@ services:
   # api server
   # ================================================================================================================
   api:
-    container_name: applcation__server
+    container_name: applcation_server
     image: eclipse-temurin:18
     volumes:
       - ./api:/api
