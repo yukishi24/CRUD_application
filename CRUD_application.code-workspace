@@ -1,6 +1,9 @@
 {
     "folders": [
         {
+            "path": "../Desktop/python_workspace"
+        },
+        {
             "path": "."
         }
     ]
