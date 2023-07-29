@@ -1,20 +1,19 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <Sample/>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Sample from './components/sample.vue';
 
-export default defineComponent({
+export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Sample,
   },
 
   data () {
@@ -22,5 +21,5 @@ export default defineComponent({
       //
     }
   },
-})
+}
 </script>
