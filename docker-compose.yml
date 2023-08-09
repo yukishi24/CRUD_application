@@ -7,6 +7,7 @@ services:
   # client server
   # ================================================================================================================
   client:
+    container_name: client_server
     image: node:18
     volumes:
       - ./client:/client
@@ -20,7 +21,7 @@ services:
   # api server
   # ================================================================================================================
   api:
-    container_name: applcation_server
+    container_name: api_server
     image: eclipse-temurin:18
     volumes:
       - ./api:/api
