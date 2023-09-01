@@ -1,0 +1,49 @@
+version: '3.9'
+# =====================================================================
+# 仮想サーバーの構築
+# =====================================================================
+services:
+  # ===================================================================
+  # app
+  # api ./app/api[eclipse-temurin:18]
+  # client ./app/client[node]
+  # ===================================================================
+  app:
+    container_name: application_server
+    image: eclipse-temurin:18
+    volumes:
+      - ../app:/app
+    tty: true
+    ports:
+      - 8000:8080
+      - 3000:3000
+    depends_on:
+      - DB
+    networks:
+      - CRUD
+  # ===================================================================
+  # DB[Mysql]
+  # DataBase:sampleDB
+  # ===================================================================
+  DB:
+    container_name: db_server # サーバー名指定
+    image: mysql:8.0.29 # サーバーのイメージ指定
+    volumes:
+      - ../db/initdb.d:/docker-entrypoint-initdb.d # dbの情報
+    tty: true
+    environment:
+      - MYSQL_DATABASE=sampleDB # Databaseの設定
+      - MYSQL_ROOT_PASSWORD=root # mysqlログインパスワードをrootに設定
+      - TZ=Asia/Tokyo # 時間を東京に設定
+    ports:
+      - 3300:3306 # portをローカルの3300に設定
+    networks:
+      - CRUD
+# =====================================================================
+# ネットワークの指定
+# ネットワーク名：CRUD
+# Type:bridge
+# =====================================================================
+networks:
+  CRUD:
+    driver: bridge
