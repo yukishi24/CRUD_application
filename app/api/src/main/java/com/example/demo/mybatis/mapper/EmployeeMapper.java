@@ -13,5 +13,5 @@ public interface EmployeeMapper {
 	 * 
 	 * @return
 	 */
-	List<Employee> findAll();
+	 public List<Employee> findAll();
 }
