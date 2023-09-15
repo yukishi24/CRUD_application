@@ -6,7 +6,7 @@
 		<result column="id" jdbcType="INTEGER" property="employee_id" />
 		<result column="name" jdbcType="VARCHAR"
 			property="employee_name" />
-		<result column="admin" jdbcType="VARCHAR" property="admin" />
+		<result column="admin" jdbcType="VARCHAR" property="employee_admin" />
 	</resultMap>
 	<select id="selectAll" resultMap="employeeMap">
 		select id, name, admin from employee

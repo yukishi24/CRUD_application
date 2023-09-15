@@ -1,4 +1,4 @@
-package com.example.demo.mybatis.entity;
+package com.example.demo.entity;
 
 import lombok.Data;
 
@@ -6,5 +6,5 @@ import lombok.Data;
 public class Employee {
 	private int employee_id;
 	private String employee_name;
-	private String admin;
+	private String employee_admin;
 }
