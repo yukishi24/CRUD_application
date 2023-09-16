@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.Employee;
 import com.example.demo.repository.EmployeeMapper;
 import com.example.demo.service.EmployeeService;
+
+/**
+ * MybatisとSpring bootを繋げる為のサービス実装クラス
+ * 
+ * @author yukishi
+ *
+ */
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired

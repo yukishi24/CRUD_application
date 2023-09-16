@@ -13,20 +13,26 @@ import com.example.demo.service.EmployeeService;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * mysqlから取得した値を表示するコントローラー
+ * 
+ * @author yukishi
+ *
+ */
 @RestController
 @RequiredArgsConstructor
 public class resultController {
 	@Autowired
 	private ModelMapper modelMapper;
-	
+
 	@Autowired
 	private EmployeeService employeeService;
-	
-	 @Autowired
-	 private EmployeeRecord record;
-	 
-	 @GetMapping("/result")
-	 public List<Employee> getResult() {
+
+	@Autowired
+	private EmployeeRecord record;
+
+	@GetMapping("/result")
+	public List<Employee> getResult() {
 		Employee employee = modelMapper.map(record, Employee.class);
 		List<Employee> resultMap = employeeService.getEmployeeList(employee);
 		return resultMap;

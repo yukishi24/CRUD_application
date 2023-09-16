@@ -6,6 +6,12 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.entity.Employee;
 
+/**
+ * mybatisの処理を記述するインターフェース
+ * 
+ * @author yukishi
+ *
+ */
 @Mapper
 public interface EmployeeMapper {
 
