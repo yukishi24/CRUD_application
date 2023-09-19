@@ -42,6 +42,7 @@ public class sampleController {
 	 * 
 	 * @return 従業員情報
 	 */
+	@GetMapping("/result")
 	public List<M_Employee> getEmployeeList() {
 		return service.getEmployees();
 	}
