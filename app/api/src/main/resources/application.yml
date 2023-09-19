@@ -1,0 +1,24 @@
+# =========================================================
+# mysql接続設定
+# =========================================================
+spring:
+  datasource:
+    url: jdbc:mysql://db/sampleDB
+    username: root
+    password: root
+---
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3300/sampleDB
+    username: root
+    password: root
+# =========================================================
+# mybatis
+# =========================================================
+mybatis:
+  mapper-locations:
+  - classpath*:mapper/EmployeeMapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.example.demo.entity
+# =========================================================
